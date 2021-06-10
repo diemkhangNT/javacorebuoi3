@@ -9,6 +9,7 @@ public class Activity42 {
         System.out.print("Nhap vao so phan tu: ");
         Scanner intput = new Scanner(System.in);
         int n = intput.nextInt();
+        intput.nextLine();
         int[] arr = new int[n];
         ArrayList<Integer> list = new ArrayList<Integer>();
         // Nhập vào giá trị từng phẩn tử
@@ -24,10 +25,11 @@ public class Activity42 {
             System.out.print(" "+list.get(i));
         }
         // Xóa phần tử trùng lặp
-        for(int i=0;i< list.size();i++){
+        for(int i=0;i< list.size()-1;i++){
             for(int j=i+1;j<list.size();j++){
                 if(list.get(i) == list.get(j)){
                     list.remove(j);
+                    j--;
                 }
             }
         }
